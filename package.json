@@ -1,6 +1,6 @@
 {
   "name": "html-webpack-plugin-extend",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,9 +13,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/guozongwei/html-webpack-plugin-extend/issues"
+    "url": "https://github.com:hefantvH5/html-webpack-plugin-extend/issues"
   },
-  "homepage": "https://github.com/guozongwei/html-webpack-plugin-extend#readme",
+  "homepage": "https://github.com:hefantvH5/html-webpack-plugin-extend#readme",
   "_from": "html-webpack-plugin-extend@1.0.0",
   "_resolved": "http://registry.npm.taobao.org/html-webpack-plugin-extend/download/html-webpack-plugin-extend-1.0.0.tgz"
 }

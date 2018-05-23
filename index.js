@@ -6,15 +6,21 @@ function HtmlWebpackPluginExtend(options) {
 }
 
 HtmlWebpackPluginExtend.prototype.apply = function(compiler) {
-    var paths = this.options.paths;
-    compiler.plugin('compilation', function(compilation, options) {
-        compilation.plugin('html-webpack-plugin-before-html-processing', function(htmlPluginData, callback) {
+   var paths = this.options.paths;
+      compiler.hooks.compilation.tap('HtmlWebpackPluginExtend', (compilation) => {
+        console.log('The compiler is starting a new compilation...');
+
+        compilation.hooks.htmlWebpackPluginAfterHtmlProcessing.tapAsync(
+          'HtmlWebpackPluginExtend',
+          (data, cb) => {
             for (var i = paths.length - 1; i >= 0; i--) {
                 htmlPluginData.assets.js.unshift(paths[i]);
             }
-            callback(null, htmlPluginData);
-        });
-    });
+            cb(null, htmlPluginData)
+          }
+        )
+      })
+
 };
 
 module.exports = HtmlWebpackPluginExtend;
